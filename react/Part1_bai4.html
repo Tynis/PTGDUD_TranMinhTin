@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 4</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Calculate the tip</h2>
+      <br />
+      <form action="EnterBill">
+        <label for="bill">Bill</label>
+        <input type="number" id="bill" value="275" />
+      </form>
+      <button onclick="calculate_tip()">Calculate tip</button><br />
+      <h2 id="ketqua"></h2>
+    </div>
+
+    <script>
+      function calculate_tip() {
+        const bill = document.getElementById("bill");
+        const billvalue = Number(bill.value);
+        const tip =
+          50 < billvalue && billvalue < 300
+            ? billvalue * 0.15
+            : billvalue * 0.2;
+        const total = billvalue + tip;
+        document.getElementById("ketqua").innerHTML =
+          "The bill was " +
+          bill.value +
+          " the tip was " +
+          tip +
+          ", and the total value: " +
+          total;
+      }
+    </script>
+  </body>
+</html>

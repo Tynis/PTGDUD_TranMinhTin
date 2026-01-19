@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <content>
+        <h2>Complete gymnatics</h2>
+        <br />
+        <h3>Score of Dophins team</h3>
+        <input type="number" value="96" id="dophins1" />
+        <input type="number" value="108" id="dophins2" />
+        <input type="number" value="89" id="dophins3" />
+        <br /><br />
+        <h3>Score of Koalas team</h3>
+        <input type="number" value="88" id="koalas1" />
+        <input type="number" value="91" id="koalas2" />
+        <input type="number" value="110" id="koalas3" /> <br />
+        <button onclick="ketqua()">Winer</button>
+        <h3 id="ketqua">Result</h3>
+      </content>
+    </div>
+
+    <script>
+      function ketqua() {
+        const d1 = document.getElementById("dophins1");
+        const d2 = document.getElementById("dophins2");
+        const d3 = document.getElementById("dophins3");
+
+        const k1 = document.getElementById("koalas1");
+        const k2 = document.getElementById("koalas2");
+        const k3 = document.getElementById("koalas3");
+
+        const avg_d =
+          (Number(d1.value) + Number(d2.value) + Number(d3.value)) / 3;
+        const avg_k =
+          (Number(k1.value) + Number(k2.value) + Number(k3.value)) / 3;
+        if (avg_d >= 100 || avg_d >= 100) {
+          if (avg_d < avg_k) {
+            document.getElementById("ketqua").innerHTML = "Koalas";
+          } else if (avg_d > avg_k) {
+            document.getElementById("ketqua").innerHTML = "Dophins";
+          } else {
+            document.getElementById("ketqua").innerHTML = "equals";
+          }
+        } else {
+          document.getElementById("ketqua").innerHTML =
+            "No winer because avange of dophins and koalas less 100";
+        }
+      }
+    </script>
+  </body>
+</html>

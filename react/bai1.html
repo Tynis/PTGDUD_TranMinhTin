@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bài 1</title>
+  </head>
+  <body>
+    <div>
+        <label for="markweight">Mark weight: </label>
+        <input type="number" id="markweight"><br>
+        <label for="markheight">Mark height: </label>
+        <input type="number" id="markheight"><br>
+        <label for="johnweight">John weight: </label>
+        <input type="number" id="johnweight"><br>
+        <label for="johnheight">John height: </label>
+        <input type="number" id="johnheight"><br>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+    </div>
+    <script>
+        markweight = document.getElementById("markweight");
+        markheight = document.getElementById("markheight");
+        johnweight = document.getElementById("johnweight");
+        johnheight = document.getElementById("johnheight");
+        let markHigherBMI;
+        function calculateBMI() {
+            let markBMI = markweight.value / (markheight.value * markheight.value);
+            let johnBMI = johnweight.value / (johnheight.value * johnheight.value);
+            if (markBMI > johnBMI) {
+              markHigherBMI = true;
+              alert(markHigherBMI);
+            } else if (markBMI < johnBMI) {
+                markHigherBMI = false;
+                alert(markHigherBMI);
+            } else {
+                alert("Mark and John have the same BMI.");
+            }
+        }   
+
+
+        
+    </script>
+  </body>
+</html>
